@@ -60,7 +60,7 @@
           <Property Name="FeatureTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="FeatureDescription" Type="nvarchar" MaxLength="1000" />
           <Property Name="FeatureImageUrl" Type="nvarchar" MaxLength="1000" />
-          <Property Name="FeatureIJobs" Type="nchar" MaxLength="300" />
+          <Property Name="FeatureIJobs" Type="nchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="TblMessage">
           <Key>
@@ -171,7 +171,7 @@
           <Property Name="FeatureTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="FeatureDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="FeatureImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="FeatureIJobs" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="FeatureIJobs" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="TblService">
           <Key>

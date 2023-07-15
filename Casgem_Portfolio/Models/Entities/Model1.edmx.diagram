@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="601a48bbde3d46bb88f7fa7c4dea76c9" Name="Diagram1">
-        <EntityTypeShape EntityType="CasgemPortfolioModel.TblFeature" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CasgemPortfolioModel.TblFeature" Width="2" PointX="1" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblService" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblMessage" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="CasgemPortfolioModel.TblReference" Width="1.5" PointX="3.375" PointY="3.75" />

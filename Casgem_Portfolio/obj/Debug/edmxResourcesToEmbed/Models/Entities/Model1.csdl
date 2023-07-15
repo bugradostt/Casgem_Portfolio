@@ -8,7 +8,7 @@
     <Property Name="FeatureTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="FeatureDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="FeatureImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="FeatureIJobs" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="FeatureIJobs" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="TblService">
     <Key>

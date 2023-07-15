@@ -40,5 +40,14 @@ namespace Casgem_Portfolio.Controllers
 
 
         }
+
+
+        public ActionResult LogOut()
+        {
+
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index");
+        }
     }
 }

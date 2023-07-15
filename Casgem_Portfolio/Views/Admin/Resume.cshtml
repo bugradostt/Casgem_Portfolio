@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Resume";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Öz Geçmişim </h3>
+<hr />
+<br />
+
+<div>
+
+   
+
+    <div class="mt-3">
+
+        <label>Başlık</label>
+        <input type="text" disabled class="form-control" value="@ViewBag.ResumeTitle1" />
+    </div>
+
+    <div class="mt-3">
+
+        <label>Başlık 2</label>
+        <input type="text" disabled class="form-control" value="@ViewBag.ResumeTitle2" />
+
+    </div>
+
+
+
+    <div class="mt-3">
+
+        <label>Açıklama</label>
+        <textarea disabled rows="6" class="form-control">@ViewBag.ResumeDescription</textarea>
+
+    </div>
+
+
+
+
+    <br />
+    <a class="btn btn-warning" href="/Admin/EditResume/">Güncelle</a>
+
+
+</div>
+

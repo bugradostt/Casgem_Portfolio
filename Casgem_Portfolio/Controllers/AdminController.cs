@@ -47,9 +47,9 @@ namespace Casgem_Portfolio.Controllers
         public ActionResult WhoAmI()
         {
             ViewBag.titlee = db.TblWhoAmI.Select(x => x.WhoAmITitle).FirstOrDefault();
-            ViewBag.jobs = db.TblWhoAmI.Select(x => x.WhoAmIJobs).FirstOrDefault();
-            ViewBag.img = db.TblWhoAmI.Select(x => x.WhoAmIImgUrl).FirstOrDefault();
-            ViewBag.des = db.TblWhoAmI.Select(x => x.WhoAmIDescription).FirstOrDefault();
+            ViewBag.jobss = db.TblWhoAmI.Select(x => x.WhoAmIJobs).FirstOrDefault();
+            ViewBag.imgg = db.TblWhoAmI.Select(x => x.WhoAmIImgUrl).FirstOrDefault();
+            ViewBag.dess = db.TblWhoAmI.Select(x => x.WhoAmIDescription).FirstOrDefault();
             return View();
         }
 
@@ -199,5 +199,40 @@ namespace Casgem_Portfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("SocialMedia");
         }
+
+
+        public ActionResult Resume()
+        {
+            ViewBag.ResumeTitle1 = db.TblResume.Select(x => x.ResumeTitle1).FirstOrDefault();
+            ViewBag.ResumeTitle2 = db.TblResume.Select(x => x.ResumeTitle2).FirstOrDefault();
+            ViewBag.ResumeDescription = db.TblResume.Select(x => x.ResumeDescription).FirstOrDefault();
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditResume()
+        {
+            var foundId = db.TblResume.Find(1);
+            return View(foundId);
+
+        }
+
+        [HttpPost]
+        public ActionResult EditResume(TblResume p)
+        {
+            var foundId = db.TblResume.Find(1);
+            foundId.ResumeTitle1 = p.ResumeTitle1;
+            foundId.ResumeTitle2 = p.ResumeTitle2;
+            foundId.ResumeDescription = p.ResumeDescription;
+            db.SaveChanges();
+            return RedirectToAction("Resume");
+
+        }
+
+
+
+
+
+
     }
 }
