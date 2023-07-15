@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Casgem_Portfolio.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-
+using System.Web.Security;
 
 namespace Casgem_Portfolio.Controllers
 {
     public class LoginController : Controller
     {
         // GET: Login
+
+
+        CasgemPortfolioEntities db = new CasgemPortfolioEntities();
 
         [HttpGet]
         public ActionResult Index()
@@ -19,9 +22,23 @@ namespace Casgem_Portfolio.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int a)
+        public ActionResult Index(TblAdmin p)
         {
-            return View();
+            var values = db.TblAdmin.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
+
+            if (values != null)
+            {
+                FormsAuthentication.SetAuthCookie(values.AdminUserName, false);
+                Session["user"] = values.AdminUserName.ToString();
+                return RedirectToAction("Feature", "Admin");
+
+            }
+            else
+            {
+                return View();
+            }
+
+
         }
     }
 }
