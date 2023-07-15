@@ -53,8 +53,12 @@ namespace Casgem_Portfolio.Controllers
 
         public PartialViewResult _PartialFooter()
         {
-            var values = db.TblSocialMedia.ToList();
-            return PartialView(values);
+            ViewBag.facebook = db.TblSocialMedia.Where(x=>x.SocialMediaId==2).Select(x => x.SocialMediaUrl).FirstOrDefault();
+            ViewBag.linkedin = db.TblSocialMedia.Where(x=>x.SocialMediaId==3).Select(x => x.SocialMediaUrl).FirstOrDefault();
+            ViewBag.twitter = db.TblSocialMedia.Where(x=>x.SocialMediaId==4).Select(x => x.SocialMediaUrl).FirstOrDefault();
+            ViewBag.instagram = db.TblSocialMedia.Where(x=>x.SocialMediaId==5).Select(x => x.SocialMediaUrl).FirstOrDefault();
+           // var values = db.TblSocialMedia.ToList();
+            return PartialView();
         }
 
         public PartialViewResult _PartialJavascript()

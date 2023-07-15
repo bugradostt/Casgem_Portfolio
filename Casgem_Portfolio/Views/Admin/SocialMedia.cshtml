@@ -11,16 +11,14 @@
 
 <h3>Sosyal Medya Listesi</h3>
 <hr />
-<a href="/Admin/AddSocialMedia/" class="btn btn-success">Sosyal Medya Ekle</a>
-<br />
-<br />
+
 <table class="table table-striped">
 
     <tr>
         <th>#</th>
         <th>Sosyal Medya Adı</th>
         <th>Kullanıcı Url</th>
-        <th></th>
+       
         <th></th>
     </tr>
 
@@ -32,9 +30,6 @@
             <td>@a</td>
             <td>@i.SocialMediaName</td>
             <td>@i.SocialMediaUrl</td>
-            <td>
-                <a href="/Admin/DeleteSocialMedia/@i.SocialMediaId" class="btn btn-danger">Sil</a>
-            </td>
             <td>
                 <a href="/Admin/EditSocialMedia/@i.SocialMediaId" class="btn btn-warning">Güncelle</a>
             </td>
