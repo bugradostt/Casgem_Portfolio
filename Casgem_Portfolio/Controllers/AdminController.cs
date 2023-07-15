@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Casgem_Portfolio.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         CasgemPortfolioEntities db = new CasgemPortfolioEntities();
