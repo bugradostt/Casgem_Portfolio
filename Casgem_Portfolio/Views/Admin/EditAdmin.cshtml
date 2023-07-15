@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "EditAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model Casgem_Portfolio.Models.Entities.TblAdmin
+
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Kullanıcı Güncelle</h3>
+<hr />
+<br />
+
+<form method="post">
+
+    <div>
+
+        <input type="hidden" class="form-control" name="AdminId" value="@Html.ValueFor(x=>x.AdminId)" />
+
+
+        <div class="mt-3">
+
+            <label>Adı</label>
+            <input type="text" class="form-control" placeholder="Adınız" name="AdminName" value="@Html.ValueFor(x=>x.AdminName)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Kullanıcı Adı</label>
+            <input type="text" class="form-control" placeholder="Kullanıcı adınız" name="AdminUserName" value="@Html.ValueFor(x=>x.AdminUserName)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Şifre</label>
+            <input type="password" placeholder="Şifreniz" class="form-control" name="AdminPassword" value="@Html.ValueFor(x=>x.AdminPassword)" />
+
+        </div>
+
+
+
+
+
+        <br />
+        <a class="btn btn-danger" href="/Admin/AdminList/">İptal</a>
+
+        <input type="submit" class="btn btn-warning" value="Güncelle" />
+
+    </div>
+
+
+</form>
+
+
+

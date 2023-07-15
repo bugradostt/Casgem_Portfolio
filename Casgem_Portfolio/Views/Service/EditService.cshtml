@@ -1,0 +1,47 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblService
+
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Hizmet Güncelle</h3>
+<hr />
+
+<form method="post" action="/Service/EditService/">
+
+    <input type="hidden" required name="ServiceId" value="@Html.ValueFor(x=>x.ServiceId)" class="form-control"  />
+
+
+    <div class="mt-3">
+        <label>Hizmet Başlığı</label>
+        <input type="text" required name="ServiceTitle"  value="@Html.ValueFor(x=>x.ServiceTitle)" class="form-control" placeholder="Hizmet başlığı" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Hizmet İkonu</label>
+        <input type="text" required name="ServiceIcon"  value="@Html.ValueFor(x=>x.ServiceIcon)" class="form-control" placeholder="Hizmet iconu" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Hizmet Numarası</label>
+        <input type="number" required name="ServiceNumber"  value="@Html.ValueFor(x=>x.ServiceNumber)" class="form-control" placeholder="Hizmet numarası" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Hizmet İçeriği</label>
+        <textarea name="ServiceContent" required class="form-control" placeholder="Hizmet içeriği" rows="6">@Html.ValueFor(x=>x.ServiceContent)</textarea>
+    </div>
+
+    <br />
+
+    <div>
+        <a href="/Service/Index/" class="btn btn-danger">İptal</a>
+        <input type="submit" class="btn btn-warning" value="Güncelle" />
+    </div>
+
+</form>
+

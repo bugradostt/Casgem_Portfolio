@@ -1,0 +1,39 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblProject
+
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Proje Güncelle</h3>
+<hr />
+
+<form method="post" action="/Project/EditProject/">
+
+        <input type="hidden" required value="@Html.ValueFor(x=>x.ProjectId)" name="ProjectId" class="form-control"/>
+    <div class="mt-3">
+        <label>Proje Adı</label>
+        <input type="text" required value="@Html.ValueFor(x=>x.ProjectName)" name="ProjectName" class="form-control" placeholder="Proje Adı" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Açıklama</label>
+        <textarea name="ProjectDescription" required class="form-control" placeholder="Açıklama" rows="6">@Html.ValueFor(x=>x.ProjectDescription)</textarea>
+    </div>
+
+    <div class="mt-3">
+        <label>Proje Url</label>
+        <input type="text" required name="ProjectUrl" value="@Html.ValueFor(x=>x.ProjectUrl)" class="form-control" placeholder="Proje url" />
+
+    </div>
+
+    <br />
+
+    <div>
+        <a href="/Project/Index/" class="btn btn-danger">İptal</a>
+        <input type="submit" class="btn btn-success" value="Kaydet" />
+    </div>
+
+</form>
+

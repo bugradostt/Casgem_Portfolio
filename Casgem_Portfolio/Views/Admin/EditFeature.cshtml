@@ -1,0 +1,66 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblFeature
+
+@{
+    ViewBag.Title = "EditFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<h3>Öne Çıkan Güncelle </h3>
+<hr />
+<br />
+
+<form method="post">
+
+    <div>
+
+
+        <input type="hidden" name="FeatureId"  class="form-control" value="@Html.ValueFor(x=>x.FeatureId)" />
+
+
+        <div class="mt-3">
+
+            <label>Başlık</label>
+            <input type="text" name="FeatureTitle"  class="form-control" value="@Html.ValueFor(x=>x.FeatureTitle)" />
+        </div>
+
+        <div class="mt-3">
+
+            <label>İşim</label>
+            <input type="text" name="FeatureIJobs"  class="form-control" value="@Html.ValueFor(x=>x.FeatureIJobs)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Fotoğraf</label>
+            <input type="text" name="FeatureImageUrl"  class="form-control" value="@Html.ValueFor(x=>x.FeatureImageUrl)" />
+
+        </div>
+
+
+
+        <div class="mt-3">
+
+            <label>Açıklama</label>
+            <textarea rows="6" name="FeatureDescription" class="form-control">@Html.ValueFor(x=>x.FeatureDescription)</textarea>
+
+        </div>
+
+
+        <br />
+        <a class="btn btn-danger" href="/Admin/Feature/">İptal</a>
+        <input type="submit" class="btn btn-warning" />
+
+
+    </div>
+
+
+</form>
+
+
+
+
+

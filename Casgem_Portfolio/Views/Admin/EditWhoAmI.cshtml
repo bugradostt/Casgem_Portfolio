@@ -1,0 +1,69 @@
+﻿@model Casgem_Portfolio.Models.Entities.TblWhoAmI
+
+
+
+@{
+    ViewBag.Title = "EditWhoAmI";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h3>Ben Kimim Güncelle</h3>
+<hr />
+<br />
+
+<form method="post">
+
+
+    <div>
+
+        <input type="hidden" class="form-control" name="WhoAmIId" value="@Html.ValueFor(x=>x.WhoAmIId)" />
+
+        <div class="mt-3">
+
+            <label>Başlık</label>
+            <input type="text" class="form-control" name="WhoAmITitle" value="@Html.ValueFor(x=>x.WhoAmITitle)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>İşim</label>
+            <input type="text" class="form-control" name="WhoAmIJobs" value="@Html.ValueFor(x=>x.WhoAmIJobs)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Fotoğraf</label>
+            <input type="text" class="form-control" name="WhoAmIImgUrl" value="@Html.ValueFor(x=>x.WhoAmIImgUrl)" />
+
+
+
+        </div>
+
+
+
+        <div class="mt-3">
+
+            <label>Açıklama</label>
+            <textarea rows="6" name="WhoAmIDescription" class="form-control">@Html.ValueFor(x=>x.WhoAmIDescription)</textarea>
+
+        </div>
+
+
+
+
+        <br />
+
+        <a class="btn btn-danger" href="/Admin/WhoAmI/">İptal</a>
+        <input type="submit" value="Güncelle" class="btn btn-warning" />
+
+
+    </div>
+
+
+</form>
+
+

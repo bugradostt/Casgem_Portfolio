@@ -1,0 +1,46 @@
+﻿@using Casgem_Portfolio.Models.Entities
+@model List<TblService>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Hizmet Listesi</h3>
+<hr />
+<a href="/Service/AddService/" class="btn btn-success">Hizmet Ekle</a>
+<br />
+<br />
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Hizmet Adı</th>
+        <th>Açıklama</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{ int a = 1;}
+    @foreach (var i in Model)
+    {
+
+        <tr>
+            <td>@a</td>
+            <td>@i.ServiceTitle</td>
+            <td>@i.ServiceContent</td>
+            <td>
+                <a href="/Service/DeleteService/@i.ServiceId" class="btn btn-danger" >Sil</a>
+            </td>
+            <td>
+                <a href="/Service/EditService/@i.ServiceId" class="btn btn-warning" >Güncelle</a>
+            </td>
+
+        </tr>
+        a++;
+
+
+    }
+
+</table>
+

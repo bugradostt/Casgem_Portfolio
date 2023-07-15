@@ -1,0 +1,62 @@
+﻿
+@model Casgem_Portfolio.Models.Entities.TblContact
+
+@{
+    ViewBag.Title = "EditContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>İletişim Güncelle</h3>
+<hr />
+<br />
+
+<form method="post">
+
+    <div>
+
+        <input type="hidden" class="form-control" name="ContactId" value="@Html.ValueFor(x=>x.ContactId)" />
+
+
+        <div class="mt-3">
+
+            <label>Telefon</label>
+            <input type="text" class="form-control" name="ContactTel" value="@Html.ValueFor(x=>x.ContactTel)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Mail</label>
+            <input type="text" class="form-control" name="ContactMail" value="@Html.ValueFor(x=>x.ContactMail)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Adres</label>
+            <input type="text" class="form-control" name="ContactAdress" value="@Html.ValueFor(x=>x.ContactAdress)" />
+
+        </div>
+
+        <div class="mt-3">
+
+            <label>Harita</label>
+            <input type="text" class="form-control" name="ContactMaps" value="@Html.ValueFor(x=>x.ContactMaps)" />
+
+        </div>
+
+
+
+
+        <br />
+        <a class="btn btn-danger" href="/Admin/Contact/">İptal</a>
+
+        <input type="submit" class="btn btn-warning" value="Güncelle" />
+
+    </div>
+
+
+</form>
+
+

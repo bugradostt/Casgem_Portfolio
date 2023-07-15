@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="tr">
+
+@Html.Action("_PartialHead", "Portfolio")
+
+<body>
+
+    @Html.Action("_PartialNavbar", "Portfolio")
+
+    <!-- contact breadcrumb -->
+    <section class="w3l-about-breadcrumb text-center">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container py-2">
+                <h2 class="title">İletişim</h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="/Portfolio/Index/">Anasayfa</a></li>
+                    <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> İletişim </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- contact breadcrumb -->
+
+    <!-- contact block -->
+    <!-- contact1 -->
+    <section class="w3l-contact-1 py-5">
+        <div class="contacts-9 py-lg-5 py-md-4">
+            <div class="container">
+                <div class="d-grid contact-view">
+                    <div class="cont-details">
+                        <div class="cont-top">
+                            <div class="cont-left text-center">
+                                <span class="fa fa-phone text-primary"></span>
+                            </div>
+                            <div class="cont-right">
+                                <h6>Telefon</h6>
+                                <p><a href="tel:@ViewBag.phone">@ViewBag.phone</a></p>
+                            </div>
+                        </div>
+                        <div class="cont-top margin-up">
+                            <div class="cont-left text-center">
+                                <span class="fa fa-envelope-o text-primary"></span>
+                            </div>
+                            <div class="cont-right">
+                                <h6>Mail</h6>
+                                <p><a href="mailto:@ViewBag.mail" class="mail">@ViewBag.mail</a></p>
+                            </div>
+                        </div>
+                        <div class="cont-top margin-up">
+                            <div class="cont-left text-center">
+                                <span class="fa fa-map-marker text-primary"></span>
+                            </div>
+                            <div class="cont-right">
+                                <h6>Adres</h6>
+                                <p>@ViewBag.adress</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-content-9">
+                        <form method="post">
+                            <div class="twice-two">
+                                <input type="text" class="form-control" name="NameSurname" id="w3lName" placeholder="Adınız"
+                                       required="">
+                                <input type="email" class="form-control" name="SenderMail" id="w3lSender" placeholder="Mail Adresiniz"
+                                       required="">
+                            </div>
+                            <div class="twice">
+                                <input type="text" class="form-control" name="MessageSubject" id="w3lSubject"
+                                       placeholder="Konu" required="">
+                            </div>
+                            <textarea name="Content" class="form-control" id="w3lMessage" placeholder="Mesaj"
+                                      required=""></textarea>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary btn-style mt-4" onclick="submitMessage()">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /contact1 -->
+    <div class="map-iframe">
+        <iframe src="@ViewBag.maps"
+                width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
+    </div>
+    <!-- //contact block -->
+
+    @Html.Action("_PartialFooter", "Portfolio")
+    @Html.Action("_PartialJavascript", "Portfolio")
+
+    <script>
+        const submitMessage = () => {
+            alert("Mesajınız gönderildi. Bizden haber bekleyiniz.")
+        }
+    </script>
+
+
+</body>
+
+</html>

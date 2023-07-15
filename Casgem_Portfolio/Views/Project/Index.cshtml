@@ -1,0 +1,61 @@
+﻿@using Casgem_Portfolio.Models.Entities
+@model List<TblProject>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Proje Listesi</h3>
+<hr />
+<a href="/Project/AddProject/" class="btn btn-success">Proje Ekle</a>
+<br />
+<br />
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Url</th>
+        <th>Proje Adı</th>
+        <th>Açıklama</th>
+       
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{ int a = 1;}
+    @foreach (var i in Model)
+    {
+
+        <tr>
+            <td>@a</td>
+          
+            <td>
+                <iframe width="200"
+                        src="@i.ProjectUrl" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+
+                </iframe>
+
+            </td>
+            <td>@i.ProjectName</td>
+            <td>@i.ProjectDescription</td>
+            
+            <td>
+                <a href="/Project/DeleteProject/@i.ProjectId" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Project/EditProject/@i.ProjectId" class="btn btn-warning">Güncelle</a>
+            </td>
+
+        </tr>
+        a++;
+
+
+    }
+
+</table>
+
+

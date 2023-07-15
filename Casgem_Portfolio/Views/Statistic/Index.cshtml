@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>İstatistik Sayfası</h3>
+
+
+<div class="card text-white bg-primary mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Toplam Personel Sayısı</h5>
+        <p class="card-text ">@ViewBag.employeeCount</p>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Mak Maaş</h5>
+        <p class="card-text" >@ViewBag.maxSalaryEmployee</p>
+    </div>
+</div>
+
+
+<div class="card text-white bg-success mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Toplam Şehir Sayısı</h5>
+        <p class="card-text">@ViewBag.totalCityCount</p>
+    </div>
+</div>
+
+
+<div class="card text-white bg-danger mb-3" >
+    <div class="card-body">
+        <h5 class="card-title">Ortalama Personel Maaşı</h5>
+        <p class="card-text">@ViewBag.avgEmployeeSalary.ToString("0.##")</p>
+    </div>
+</div>
+
+
+<div class="card text-white bg-warning mb-3" >
+    <div class="card-body">
+        <h5 class="card-title">Yazılım Departmanı Personel Sayısı</h5>
+        <p class="card-text">@ViewBag.countSoftwareDepartment</p>
+    </div>
+</div>
+
+
+<div class="card text-white bg-info mb-3" >
+    <div class="card-body">
+        <h5 class="card-title">Şehri Ankara veya Adana Personellerin Toplam Maaşı </h5>
+        <p class="card-text"> @ViewBag.cityAnkaraOrAdanaSumSalary</p>
+    </div>
+</div>
+
+
+
+<div class="card bg-light mb-3" >
+    <div class="card-body">
+        <h5 class="card-title">Şehri Ankaraki Yazılımcıların Maaşı </h5>
+        <p class="card-text">@ViewBag.sumSalaryFromSoftwareDepartment</p>
+    </div>
+</div>
+
+
+

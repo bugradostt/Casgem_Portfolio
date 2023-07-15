@@ -1,0 +1,52 @@
+﻿
+
+@using Casgem_Portfolio.Models.Entities
+@model List<TblAdmin>
+
+
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Kullanıcı Listesi</h3>
+<hr />
+<a href="/Admin/AddAdmin/" class="btn btn-success">Kullanıcı Ekle</a>
+<br />
+<br />
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Adı</th>
+        <th>Kullanıcı Adı</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{ int a = 1;}
+    @foreach (var i in Model)
+    {
+
+        <tr>
+            <td>@a</td>
+            
+            <td>@i.AdminName</td>
+            <td>@i.AdminUserName</td>
+            
+            <td>
+                <a href="/Admin/DeleteAdmin/@i.AdminId" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Admin/EditAdmin/@i.AdminId" class="btn btn-warning">Güncelle</a>
+            </td>
+
+        </tr>
+        a++;
+
+
+    }
+
+</table>
+

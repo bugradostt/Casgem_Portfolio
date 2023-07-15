@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "WhoAmI";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h3>Ben Kimim ? </h3>
+<hr />
+<br />
+
+<div>
+
+    <div class="mt-3">
+
+        <label>Fotoğraf</label>
+        <br />
+        <img width="250" src="@ViewBag.img" />
+
+    </div>
+
+    <div class="mt-3">
+
+        <label>Başlık</label>
+        <input type="text" disabled class="form-control" value="@ViewBag.titlee" />
+    </div>
+
+    <div class="mt-3">
+
+        <label>İşim</label>
+        <input type="text" disabled class="form-control" value="@ViewBag.jobs" />
+
+    </div>
+
+
+
+    <div class="mt-3">
+
+        <label>Açıklama</label>
+        <textarea disabled rows="6" class="form-control">@ViewBag.des</textarea>
+
+    </div>
+
+
+
+
+    <br />
+    <a class="btn btn-warning" href="/Admin/EditWhoAmI/">Güncelle</a>
+
+
+</div>
+

@@ -1,0 +1,49 @@
+﻿@using Casgem_Portfolio.Models.Entities
+@model List<TblMessage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Mesaj Listesi</h3>
+<hr />
+
+<br />
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Mesajı Aç</th>
+        <th></th>
+    </tr>
+
+    @{ int a = 1;}
+    @foreach (var i in Model)
+    {
+
+        <tr>
+            <td>@a</td>
+            <td>@i.NameSurname</td>
+            <td>@i.MessageSubject</td>
+           
+            <td>
+                <a href="/Message/DetailsMessage/@i.MessageId" class="btn btn-secondary">Mesajı Aç</a>
+            </td>
+
+             
+            <td>
+                <a href="/Message/DeleteService/@i.MessageId" class="btn btn-danger">Sil</a>
+            </td>
+           
+
+        </tr>
+        a++;
+
+
+    }
+
+</table>
+

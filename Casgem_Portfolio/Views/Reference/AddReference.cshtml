@@ -1,0 +1,44 @@
+﻿
+
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Referans Ekle</h3>
+<hr />
+
+<form method="post" action="/Reference/AddReference/">
+
+    <div class="mt-3">
+        <label>Adı Soyadı</label>
+        <input type="text" required name="ReferenceNameSurname" class="form-control" placeholder="Adı soyadı" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>İş Yeri</label>
+        <input type="text" required name="ReferenceBusinessName" class="form-control" placeholder="İş yeri" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Fotoğraf Url</label>
+        <input type="text" required name="ReferenceImgUrl" class="form-control" placeholder="Fotoğraf url" />
+
+    </div>
+
+    <div class="mt-3">
+        <label>Açıklama</label>
+        <textarea name="ReferenceDescription" required class="form-control" placeholder="Açıklama" rows="6"></textarea>
+    </div>
+
+    <br />
+
+    <div>
+        <a href="/Reference/Index/" class="btn btn-danger">İptal</a>
+        <input type="submit" class="btn btn-success" value="Kaydet" />
+    </div>
+
+</form>
+
